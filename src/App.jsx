@@ -1,8 +1,6 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './UniversalComponents/Navbar'
-import Home from './components/Home/Home'
+import HomePage from './components/Home/HomePage'
 
 
 function App() {
@@ -11,9 +9,8 @@ function App() {
   return (
    <>
    <Router>
-  <Navbar/>
     <Routes>
-      <Route path='/' exact component={Home} />
+      <Route path='/' exact Component={HomePage} />
     </Routes>
    </Router>
 

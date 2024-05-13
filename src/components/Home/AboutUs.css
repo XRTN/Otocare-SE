@@ -1,0 +1,87 @@
+
+
+.aboutUs-container{
+    width: 100%;
+    height: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.aboutUs-wrapper{
+    height: 90%;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+.aboutUs-left-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+
+    height: 90%;
+    width: 48%;
+   
+}
+
+.aboutUs-img-left{
+    width: 100%;
+}
+
+.aboutUs-right-container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    width: 42%;
+    
+}
+
+.aboutUs-img-right{
+    width: 100%;
+}
+
+.aboutUs-text-1{
+    font-family: 'Inter';
+    font-size:  1.25rem;
+    text-align: justify;
+    letter-spacing: -2%;
+    line-height: 200%;
+}
+
+.aboutUs-text-2{
+    font-family: 'Inter';
+    font-size:  1.25rem;
+    text-align: justify;
+    letter-spacing: -2%;
+    line-height: 200%;
+}
+
+.aboutUs-logo{
+    display: flex;
+    height: 20px;
+    text-wrap: nowrap;
+}
+.aboutUs-header{
+    font-family: 'Days One';
+    color: #FF6C00;
+    font-weight: 400;
+    margin-left: 6%;
+    
+}
+
+.aboutUs-right-container>h2{
+    color: #2B4448 ;
+    margin-top: -15%;
+}

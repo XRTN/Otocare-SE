@@ -1,0 +1,88 @@
+.footer-container{
+    background-color: #121F45 ;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: row;
+}
+
+.footer-wrapper{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-left{
+    height: 100%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+.footer-left>h1{
+    color: #fff;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 64px;
+
+
+}
+
+.footer-mid{
+    height: 100%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-right: 8%;
+}
+
+.footer-mid>h1,h2{
+    color: #fff;
+    font-family: Days One;
+    font-weight: 400;
+}
+
+.footer-mid>p{
+    color: #fff;
+    font-family: Inter;
+    
+}
+
+.p1{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.p2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-right{
+    height: 100%;
+    width: 35%;display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.footer-right>h1{
+    color: #fff;
+    font-family: Days One;
+    font-weight: 400;
+}
+
+.footer-logo-wrapper{
+    width:24%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}

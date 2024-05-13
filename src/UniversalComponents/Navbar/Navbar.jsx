@@ -1,16 +1,20 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 
+import './Navbar.css'
+
 function Navbar() {
   const [click,setClick]=useState(false)
   const handleClick=()=>setClick(!click)
   const closeMobileMenu=()=>setClick(false)
+
+ 
   return (
     <>
     <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo">
-           <img src="/logo.png" alt="Logo" width="15%" height="25%" class="d-inline-block align-text-top"/>
+           <img src="/logo.png" alt="Logo" width="15%" height="25%"/>
         </Link>  
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? 'fas fa-times':'fas fa-bars'}/>
@@ -38,4 +42,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;
