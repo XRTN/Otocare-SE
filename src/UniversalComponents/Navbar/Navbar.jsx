@@ -31,7 +31,7 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-item'>
-            <Link to='src/components/Profile' className='nav-links'onClick={closeMobileMenu}>
+            <Link to='/profile' className='nav-links'onClick={closeMobileMenu}>
               Profile
             </Link>
           </li>

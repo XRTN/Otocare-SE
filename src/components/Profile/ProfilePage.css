@@ -1,0 +1,44 @@
+.profile-arrow .arrowlogo{
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.userprofile-box {
+    background-color: #b93d3d;
+    border-radius: 10px;
+    padding: 30px; 
+    margin-top: 150px; 
+    max-width: 400px; /* Adjust max-width as needed */
+}
+
+.userprofile-box h2 {
+    text-align: left;
+    color: #FF6C00;
+    margin-top: 10px;
+    font-family: 'poppins';
+    margin-bottom: 50px;
+}
+
+.userprofile-box .form-group {
+    margin-bottom: 25px;
+}
+
+.userprofile-box label {
+    color: #050101;
+    font-family: 'inter', sans-serif;
+    font-size: small;
+    display: block; /* Change label to block element */
+    margin-bottom: 5px; /* Add margin to separate label from input */
+}
+
+.userprofile-box input {
+    width: 100%; /* Make input take up full width */
+    padding: 5px;
+    background-color: #e3e3e3;
+    border-radius: 5px;
+}
