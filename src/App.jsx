@@ -4,6 +4,7 @@ import HomePage from './components/Home/HomePage'
 import LoginPage from './components/Login/LoginPage'
 import RegisterPage from './components/Register/RegisterPage'
 import ProfilePage from './components/Profile/ProfilePage'
+import PaymentPage from './components/Payment/PaymentPage'
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
       <Route path='/profile' exact Component={ProfilePage}/>
       <Route path='/login' exact Component={LoginPage}/>
       <Route path='/register' exact Component={RegisterPage}/>
+      <Route path='/payment' exact Component={PaymentPage}/>
     </Routes>
    </Router>
 

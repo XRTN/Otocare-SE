@@ -1,0 +1,29 @@
+:root{
+    background-color: #D9D9D9;
+}
+
+.PaymentHeader-container{
+    
+    height: 200px;
+    width: 100%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    object-fit: contain;
+
+}
+
+.PaymentHeader-wrapper{
+
+    width: 45%;
+    margin-left: 5%;
+  
+}
+
+.PaymentHeader-wrapper>h1{
+    font-family: "Days One", sans-serif;
+    color:#121F45;
+    font-weight: 400;
+   
+}
