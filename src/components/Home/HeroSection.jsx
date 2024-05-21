@@ -26,7 +26,7 @@ function HeroSection() {
                 MAKE APPOINTMENT
               </Button>
             </div>
-            <img src="/hotline.png" />
+            <img src="./gambarhome/hotline.png" />
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@ function HeroSection() {
         <div className="hero-footer-wrapper">
           <div className="bestPrices">
             <div className="bestPrices-left">
-              <img src="/price-icon.png" />
+              <img src="./gambarhome/price-icon.png" />
             </div>
             <div className="bestPrices-right">
               <h1>BEST PRICES</h1>
@@ -47,7 +47,7 @@ function HeroSection() {
           </div>
           <div className="guarantee">
             <div className="guarantee-left">
-              <img src="/guarantee-icon.png" />
+              <img src="./gambarhome/guarantee-icon.png" />
             </div>
             <div className="guarantee-right">
               <h1>100% GUARANTEED</h1>
@@ -58,7 +58,7 @@ function HeroSection() {
           </div>
           <div className="certified">
             <div className="certified-left">
-              <img src="/certified-icon.png" />
+              <img src="./gambarhome/certified-icon.png" />
             </div>
             <div className="certified-right">
               <h1>CERTIFIED MECHANICS</h1>

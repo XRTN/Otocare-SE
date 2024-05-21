@@ -15,13 +15,13 @@ function Testimonial() {
           </div>
           <div className="testi-bot-wrapper">
             <div className="testi-1-wrapper">
-              <img src="/testi-1.png" className="testi-1" />
+              <img src="./gambarhome/testi-1.png" className="testi-1" />
             </div>
             <div className="testi-2-wrapper">
-              <img src="/testi-2.png" className="testi-2" />
+              <img src="./gambarhome/testi-2.png" className="testi-2" />
             </div>
             <div className="testi-3-wrapper">
-              <img src="/testi-3.png" className="testi-3" />
+              <img src="./gambarhome/testi-3.png" className="testi-3" />
             </div>
           </div>
         </div>

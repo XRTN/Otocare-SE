@@ -7,7 +7,7 @@ function AboutUs() {
       <div className="aboutUs-container">
         <div className="aboutUs-wrapper">
           <div className="aboutUs-left-container">
-            <img src="/AboutUs-img1.png" className="aboutUs-img-left" />
+            <img src="./gambarhome/AboutUs-img1.png" className="aboutUs-img-left" />
             <p className="aboutUs-text-1">
               Whether you're at home, work, or stranded on the roadside, we've
               got you covered. With a commitment to transparency, integrity, and
@@ -30,7 +30,7 @@ function AboutUs() {
               certified technicians is equipped with cutting-edge tools to
               ensure efficient repairs wherever you are.
             </p>
-            <img src="AboutUs-img2.png" className="aboutUs-img-right" />
+            <img src="./gambarhome/AboutUs-img2.png" className="aboutUs-img-right" />
           </div>
         </div>
       </div>

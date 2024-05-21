@@ -1,0 +1,77 @@
+.title-container{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+
+.title-wrapper{
+    /* background-color: cadetblue; */
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100%;
+    height: 70%;
+}
+.title-left{
+    /* background-color: red; */
+    display: flex;
+    width: 50%;
+    align-items: center;
+
+}
+.title-left>h1{
+    font-family: Days One;
+    font-weight: 400;
+    font-size: 3.5rem;
+    color: #121F45;
+}
+
+.cards-container{
+    /* background-color: rgb(84, 126, 163); */
+    display: flex;
+    width: 100%;
+    height:1622px;
+    margin-bottom: 4%;
+}
+
+.cards-wrapper{
+    /* background-color: darksalmon; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100%;
+    height: 100%;
+}
+
+.cards-1-container{
+    /* background-color: crimson; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    justify-content: space-between;
+}
+
+.cards-2-container{
+    /* background-color: crimson; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.cards-3-container{
+    /* background-color: crimson; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+

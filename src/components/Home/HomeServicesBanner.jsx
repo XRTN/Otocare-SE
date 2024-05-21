@@ -19,7 +19,7 @@ function HomeServicesBanner() {
             <Button linkTo="/Services">EXPLORE OUR SERVICES</Button>
           </div>
           <div className="hsb-img-container">
-            <img src="/hsb.png" />
+            <img src="./gambarhome/hsb.png" />
           </div>
         </div>
       </div>
