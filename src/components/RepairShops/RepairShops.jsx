@@ -1,8 +1,10 @@
 import React from "react";
 import "./RepairShops.css";
 import Navbar from "../../UniversalComponents/Navbar/Navbar";
-import Card from "../../UniversalComponents/Card/Card";
+
 import Footer from "../../UniversalComponents/Footer/Footer";
+import CardContainer from "../../UniversalComponents/Card/CardContainer";
+
 
 function RepairShops() {
   return (
@@ -20,90 +22,54 @@ function RepairShops() {
         <div className="cards-wrapper">
           <div className="cards-1-container">
             <div className="card-1">
-              <Card
-                img="./gambarrepairshops/card-1.jpg"
-                header="VAN REPAIR SHOPS"
-                services1="OIL & FLUIDS"
-                services2="WHEELS"
-                services3="ELECTRICALS"
-                rating="5.0"
+              <CardContainer
+                docId="apGRzADWcsGEtZTM6qiZ"
               />
             </div>
             <div className="card-2">
-              <Card
-                img="./gambarrepairshops/card-2.jpg"
-                header="JEMS AUTO REPAIR"
-                services1="OIL & FLUIDS"
-                services2="ELECTRICALS"
-                rating="4.8"
+              <CardContainer
+              docId="ZTBGac86Vqh2JRmJ72rp"
               />
             </div>
-            <div className="card-3">
-              <Card
-                img="./gambarrepairshops/card-3.jpg"
-                header="DAN WHEELS"
-                services1="WHEELS"
-                rating="4.6"
+           <div className="card-3">
+              <CardContainer
+               docId="tZhm1c8G1l16UfX5Iw5D"
               />
             </div>
           </div>
           <div className="cards-2-container">
-            <div className="card-1">
-              <Card
-                img="./gambarrepairshops/card-1.jpg"
-                header="VAN REPAIR SHOPS"
-                services1="OIL & FLUIDS"
-                services2="WHEELS"
-                services3="ELECTRICALS"
-                rating="5.0"
+            <div className="card-4">
+              <CardContainer
+                docId="BKLdeZGMKXoPTxoKznLy"
               />
             </div>
-            <div className="card-2">
-              <Card
-                img="./gambarrepairshops/card-2.jpg"
-                header="JEMS AUTO REPAIR"
-                services1="OIL & FLUIDS"
-                services2="ELECTRICALS"
-                rating="4.8"
+            <div className="card-5">
+              <CardContainer
+               docId="qMtlz0Rtd0yRi62Kg6fO"
               />
             </div>
-            <div className="card-3">
-              <Card
-                img="./gambarrepairshops/card-3.jpg"
-                header="DAN WHEELS"
-                services1="WHEELS"
-                rating="4.6"
+            <div className="card-6">
+              <CardContainer
+                docId="cltsPHQL3H6KC04YzYPF"
               />
             </div>
           </div>
           <div className="cards-3-container">
-          <div className="card-1">
-              <Card
-                img="./gambarrepairshops/card-1.jpg"
-                header="VAN REPAIR SHOPS"
-                services1="OIL & FLUIDS"
-                services2="WHEELS"
-                services3="ELECTRICALS"
-                rating="5.0"
+          <div className="card-7">
+              <CardContainer
+               docId="tyE1qHewpSre1nT5FDmR"
               />
             </div>
-            <div className="card-2">
-              <Card
-                img="./gambarrepairshops/card-2.jpg"
-                header="JEMS AUTO REPAIR"
-                services1="OIL & FLUIDS"
-                services2="ELECTRICALS"
-                rating="4.8"
+            <div className="card-8">
+              <CardContainer
+               docId="LH2ctGzwKGtBu34tTeb8"
               />
-            </div>
-            <div className="card-3">
-              <Card
-                img="./gambarrepairshops/card-3.jpg"
-                header="DAN WHEELS"
-                services1="WHEELS"
-                rating="4.6"
+            </div> 
+             <div className="card-9">
+              <CardContainer
+                docId="4q5uicUfLV07IYDWjsdm"
               />
-            </div>
+            </div> 
           </div>
         </div>
       </div>
