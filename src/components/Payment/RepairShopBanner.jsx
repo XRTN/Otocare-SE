@@ -11,7 +11,7 @@ function RepairShopBanner() {
             <p>
               08.00 - 22.00 | 0.5 KM{" "}
             </p>
-            <p><img src="/Star.png" /> 5.0 / 49 REVIEWS</p>
+            <div className="rsb-rating"><img src="/Star.png" className="rsb-star" /> 5.0 / 49 REVIEWS</div>
           </div>
         </div>
       </div>

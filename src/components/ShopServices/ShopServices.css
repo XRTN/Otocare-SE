@@ -1,0 +1,18 @@
+.shop-services-container {
+  color: #808080;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7%; 
+  margin-bottom: 20%;
+  margin-left: 9%;
+  margin-right: 7%;
+}
+
+.services-heading {
+  color: #121F45;
+  font-family: "Days One", sans-serif;
+  font-size: 64px;
+  text-align: left; 
+  margin-top: 5%; 
+  padding-right: 67%; 
+}

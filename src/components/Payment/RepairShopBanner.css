@@ -29,6 +29,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
     
 }
 
@@ -47,4 +48,15 @@
     font-size: 1.2rem;
     text-align: justify;
     margin-top: 2%;
+}
+
+.rsb-rating{
+    display: flex;
+    color:#fff;
+    font-family: "Days One", sans-serif;
+    font-size: 1.2rem;
+    margin-top: 2%;
+    align-items: center;
+    width: 50%;
+    column-gap: 5%;
 }

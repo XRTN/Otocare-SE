@@ -6,6 +6,8 @@ import RegisterPage from './components/Register/RegisterPage'
 import ProfilePage from './components/Profile/ProfilePage'
 import PaymentPage from './components/Payment/PaymentPage'
 import RepairShops from './components/RepairShops/RepairShops'
+import ShopServices from './components/ShopServices/ShopServices'
+import Services from './components/Services/Services'
 
 function App() {
   
@@ -20,6 +22,8 @@ function App() {
       <Route path='/register' exact Component={RegisterPage}/>
       <Route path='/payment' exact Component={PaymentPage}/>
       <Route path='/repairShops' exact Component={RepairShops}/>
+      <Route path='/shopservices' exact Component={ShopServices}/>
+      <Route path='/services' exact Component={Services}/>
     </Routes>
    </Router>
 
