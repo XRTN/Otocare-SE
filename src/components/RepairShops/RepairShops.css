@@ -13,20 +13,31 @@
     margin-right: 10%;
     width: 100%;
     height: 70%;
+    justify-content: space-between;
 }
 .title-left{
     /* background-color: red; */
     display: flex;
-    width: 50%;
+    width: 45%;
     align-items: center;
 
 }
 .title-left>h1{
     font-family: Days One;
     font-weight: 400;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #121F45;
+    margin-bottom: 0 !important;
 }
+
+.title-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+
 
 .cards-container{
     /* background-color: rgb(84, 126, 163); */

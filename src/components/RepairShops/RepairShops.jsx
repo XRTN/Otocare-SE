@@ -4,6 +4,7 @@ import Navbar from "../../UniversalComponents/Navbar/Navbar";
 
 import Footer from "../../UniversalComponents/Footer/Footer";
 import CardContainer from "../../UniversalComponents/Card/CardContainer";
+import SearchFilter from "../../UniversalComponents/SearchFilter/SearchFilter";
 
 
 function RepairShops() {
@@ -15,7 +16,9 @@ function RepairShops() {
           <div className="title-left">
             <h1>REPAIR SHOPS</h1>
           </div>
-          <div className="title-right"></div>
+          <div className="title-right">
+            <SearchFilter/>
+          </div>
         </div>
       </div>
       <div className="cards-container">
