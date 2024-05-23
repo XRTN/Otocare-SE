@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "../../UniversalComponents/Button/Button";
-import { Link } from "react-router-dom";
 import "../Home/HomeServicesBanner.css";
 
 function HomeServicesBanner() {
@@ -16,7 +15,10 @@ function HomeServicesBanner() {
               services and reliable battery replacements, trust our expert
               technicians to keep you on the road with confidence.
             </p>
-            <Button linkTo="/Services">EXPLORE OUR SERVICES</Button>
+            <div className="hsb-btn">
+            <Button  linkTo="/Services">EXPLORE OUR SERVICES</Button>
+
+            </div>
           </div>
           <div className="hsb-img-container">
             <img src="./gambarhome/hsb.png" />

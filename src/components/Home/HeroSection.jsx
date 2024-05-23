@@ -19,7 +19,7 @@ function HeroSection() {
             <div className="hero-btns">
               <Button
                 linkTo="/RepairShops"
-                className="btns"
+                className="btns" 
                 buttonStyle="btn--primary"
                 buttonSize="btn--large"
               >
