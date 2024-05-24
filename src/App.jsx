@@ -22,7 +22,7 @@ function App() {
       <Route path='/register' exact Component={RegisterPage}/>
       <Route path='/payment' exact Component={PaymentPage}/>
       <Route path='/repairShops' exact Component={RepairShops}/>
-      <Route path='/shopservices' exact Component={ShopServices}/>
+      <Route path='/shopServices/:searchID' exact Component={ShopServices}/>
       <Route path='/services' exact Component={Services}/>
     </Routes>
    </Router>

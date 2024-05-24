@@ -1,9 +1,16 @@
 import React from "react";
 import "./Card.css";
+import { useNavigate } from "react-router-dom";
 
 function Card(props) {
+  const navigate = useNavigate();
+
+  const handleClick = (title) => {
+    navigate(`/shopServices/${title}`);
+  };
+
   return (
-    <div className="card">
+    <div className="card" onClick={() => handleClick(props.title)}>
       <div className="card-top">
         <img src={props.img} className="card-img" />
       </div>

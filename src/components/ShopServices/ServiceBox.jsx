@@ -10,11 +10,11 @@ function ServiceBox(props) {
       <div className="serv-card-bottom">
         <h1 className="serv-card-title">{props.serviceName}</h1>
         <h2>PRICE</h2>
-        <p className="serv-card-services1">Standard: {props.priceStandard}</p>
-        <p className="serv-card-services2">Premium: {props.pricePremium}</p>
+        <p className="serv-card-services1">{props.priceStandard}</p>
       </div>
     </div>
   );
 }
 
 export default ServiceBox;
+ 
