@@ -2,11 +2,12 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  width: 377px;
+  width: 32%;
   height: 488px;
   border: 1px solid #ccc;
   margin-right: 20px;
   box-sizing: border-box; 
+  cursor: pointer;
 }
 
 .serv-card-top {
@@ -18,6 +19,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover; 
+  border-radius: 8px 8px 0 0;
 }
 
 .serv-card-bottom {

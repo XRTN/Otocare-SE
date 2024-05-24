@@ -1,16 +1,14 @@
 import React from "react";
 import "./Card.css";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Card(props) {
-  const navigate = useNavigate();
 
-  const handleClick = (title) => {
-    navigate(`/shopServices/${title}`);
-  };
+
+  const cardPath = `/shopServices/${props.title}`;
 
   return (
-    <div className="card" onClick={() => handleClick(props.title)}>
+    <Link className="card" to={cardPath}>
       <div className="card-top">
         <img src={props.img} className="card-img" />
       </div>
@@ -25,7 +23,7 @@ function Card(props) {
         <img src={props.star} className="rating-img" />
         <p className="rating-number">{props.rating}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

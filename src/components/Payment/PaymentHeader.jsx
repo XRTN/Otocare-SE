@@ -5,7 +5,7 @@ function PaymentHeader() {
   return (
     <div className="PaymentHeader-container">
         <div className="PaymentHeader-wrapper">
-            <h1>OIL CHANGE</h1>
+            <h1>INVOICE</h1>
         </div>
       </div>
   )

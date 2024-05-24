@@ -4,16 +4,59 @@ import Footer from "../../UniversalComponents/Footer/Footer.jsx";
 import "./ShopServices.css";
 import ServiceBox from "./ServiceBox";
 import RepairShopBanner from "../Payment/RepairShopBanner.jsx";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { db } from "../../firebase.js";
-import { collection, getDocs, where, query } from "firebase/firestore";
-
+import {
+  collection,
+  getDocs,
+  where,
+  query,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 
 function ShopServices() {
   const { searchID } = useParams();
   const [searchResult, setSearchResult] = useState([]);
 
-  //bikin function onclick disini
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+
+  const handleServiceClick = async (shopId, serviceId, currentChoice) => {
+    try {
+      const serviceDocRef = doc(
+        db,
+        "RepairShops",
+        shopId,
+        "Services",
+        serviceId
+      );
+      await updateDoc(serviceDocRef, { choice: !currentChoice });
+      console.log(
+        `Service ${serviceId} in shop ${shopId} updated successfully.`
+      );
+      setSearchResult((prevResults) =>
+        prevResults.map((shop) => {
+          if (shop.id === shopId) {
+            return {
+              ...shop,
+              services: shop.services.map((service) => {
+                if (service.id === serviceId) {
+                  return { ...service, choice: !currentChoice };
+                }
+                return service;
+              }),
+            };
+          }
+          return shop;
+        })
+      );
+    } catch (e) {
+      console.log("Error updating service choice:", e);
+    }
+  };
 
   useEffect(() => {
     const searchData = async () => {
@@ -36,14 +79,16 @@ function ShopServices() {
           for (const shopDoc of shopServicesRef.docs) {
             const service = shopDoc.data();
             shopServices.push({
+              id: shopDoc.id,
               serviceTitle: service.title,
               servicePrice: service.price,
               priceText: service.subtitle,
-              choice:service.choice,
+              choice: false,
             });
           }
 
           shops.push({
+            id: doc.id,
             img: shop.img,
             rating: shop.rating,
             service1: shop.service1,
@@ -66,29 +111,35 @@ function ShopServices() {
   }, [searchID]);
 
   const firstShop = searchResult.length > 0 ? searchResult[0] : null;
+  const paymentPath = firstShop ? `/payment/${firstShop.title}` : "/payment";
 
   return (
     <div>
       <Navbar />
       {firstShop && (
-        <RepairShopBanner
-          title={firstShop.title}
-          rating={firstShop.rating}
-        />
+        <RepairShopBanner title={firstShop.title} rating={firstShop.rating} />
       )}
       <h2 className="services-heading">SERVICES</h2>
       <div className="shop-services-container">
         {searchResult.map((shop, shopIndex) =>
           shop.services.map((service, serviceIndex) => (
             <ServiceBox
-              //panggil function onclick disini
+              key={`${shopIndex}-${serviceIndex}`}
+              handleClick={() =>
+                handleServiceClick(shop.id, service.id, service.choice)
+              }
               serviceName={service.serviceTitle}
               imageUrl="/gambarservices/OilService.jpg"
               priceStandard={service.servicePrice}
-              key={`${shopIndex}-${serviceIndex}`}
+              isSelected={service.choice}
             />
           ))
         )}
+      </div>
+      <div className="finishOrder-container">
+        <Link to={paymentPath} className="finishOrder-btn" >
+          order now
+        </Link>
       </div>
       <Footer />
     </div>

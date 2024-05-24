@@ -42,16 +42,25 @@
     flex-direction: column;
     align-items: center;
     justify-content:space-between;
-    height: 130px;
+    height: auto;
 }
 
-.ServicePayment,.MobileServiceCharge,.Subtotal,.Merchant{
+.ServicePayment{
     display: flex;
     width: 100%;
     flex-direction: row;
     align-items: center;
     justify-content:space-between;
-    height: 130px;
+    height: 50px;
+}
+
+.MobileServiceCharge,.Subtotal,.Merchant{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    height: 50px;
 }
 
 .ServicePayment>p,.MobileServiceCharge>p,.Subtotal>p,.PaymentMethod>h1,.Merchant>p{
@@ -59,8 +68,7 @@
 }
 
 .PaymentDetails-margin{
-    margin-left: 10%;
-    margin-right: 10%;
+    padding: 7% 10%;
     align-items: center;
     
 }
@@ -71,15 +79,17 @@
     width: 100%;
     flex-direction: column;
     justify-content:space-between;
-    height: 250px;
+    align-items: center;
+    height: 200px;
 }
 
 .Merchant{
     height: 50px;
 }
 
-.PaymentMethod{
-    margin-top: 10%
+.PaymentMethod>h1{
+    margin-top: 10%;
+    font-size: 32px
 }
 
 .order-btns{
@@ -91,4 +101,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+.paymentMethod-btn{
+    background-color: var(--orange);
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    color: white;
+    font-weight: 600;
+
+}
+
+.paymentMethod-btn:hover{
+    background-color: var(--lightOrange);
+}
+
+.paymentMethod-img{
+    width: 4.5%;
+    height: 60%;
+}
+
+.debit-container{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.debit-img{
+    width: 25%;
+    height: 65%;
 }
