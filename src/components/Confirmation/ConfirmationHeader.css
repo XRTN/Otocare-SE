@@ -1,0 +1,33 @@
+:root{
+    background-color: #D9D9D9;
+}
+
+.ConfirmationHeader-container{
+    
+    height: 200px;
+    width: 45%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    object-fit: contain;
+
+}
+
+.ConfirmationHeader-wrapper{
+    width: 45%;
+    margin-left: 5%;
+  
+}
+
+.Back-btns{
+    width: 100%;
+    .btn{
+        margin-left: 0%;
+        background-color: transparent;
+        border-color: transparent;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
