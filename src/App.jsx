@@ -8,6 +8,8 @@ import PaymentPage from './components/Payment/PaymentPage'
 import RepairShops from './components/RepairShops/RepairShops'
 import ShopServices from './components/ShopServices/ShopServices'
 import Services from './components/Services/Services'
+import ConfirmationPage from './components/Confirmation/ConfirmationPage'
+import HistoryPage from './components/History/HistoryPage'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Route path='/repairShops' exact Component={RepairShops}/>
       <Route path='/shopServices/:searchID' exact Component={ShopServices}/>
       <Route path='/services' exact Component={Services}/>
+      <Route path='/confirmation' exact Component={ConfirmationPage}/>
+      <Route path='/history' exact Component={HistoryPage}/>
     </Routes>
    </Router>
 
