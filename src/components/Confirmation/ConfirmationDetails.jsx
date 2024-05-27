@@ -23,28 +23,14 @@ function ConfirmationDetails() {
                     <img src="Confirmed.png" />
                     <h1>PAYMENT CONFIRMED</h1>
                 </div>
-                <div className='PaymentDetails-wrapper-middle'>
-                    <div className='ServicePayment'>
-                        <p>STANDARD OIL CHANGE</p>
-                        <p>Rp 500.000</p>
-                    </div>
-                <div className='MobileServiceCharge'>
-                        <p>MOBILE SERVICE CHARGE</p>
-                        <p>RP 10.000</p>
-                </div>
                 <ColoredLine color="black"/>
-                    <div className='Subtotal'>
-                        <p>SUBTOTAL</p>
-                        <p>RP 510.000</p>
-                    </div>
-                </div>
                 <div className='ConfirmationDetails-wrapper-middle'>
                     <h1>THANK YOU FOR USING OUR SERVICE PLEASE CONTACT OUR MECHANICS FOR MORE INFORMATION ABOUT YOUR ORDER</h1>
                 </div>
                 <div className='ConfirmationDetails-wrapper-bottom'>
                     <div className='Contact-btns'>
                         <Button
-                            linkTo="/RepairShops"
+                            linkTo="https://wa.me/6282168682109?text=Hi%20I'd%20like%20help%20about%20OTOCARE"
                             className="btns"
                             buttonStyle="btn--primary"
                             buttonSize="btn--large"

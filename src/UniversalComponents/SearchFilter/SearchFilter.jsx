@@ -42,6 +42,7 @@ function SearchFilter({ setResult }) {
             item.services.some((service) => service.toLowerCase() === filter.toLowerCase());
           return matchesTitle && matchesService;
         });
+        filteredItems.sort((a, b) => a.title.localeCompare(b.title));
 
         setResult(filteredItems);
         console.log(filteredItems);

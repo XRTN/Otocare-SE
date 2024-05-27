@@ -4,7 +4,7 @@ import Footer from "../../UniversalComponents/Footer/Footer.jsx";
 import "./PaymentPage.css";
 import RepairShopBanner from "./RepairShopBanner";
 import PaymentHeader from "./PaymentHeader";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { db } from "../../firebase.js";
 import { collection, getDocs, where, query, addDoc } from "firebase/firestore";
 import "./PaymentDetails.css";
@@ -25,10 +25,12 @@ function PaymentPage() {
       }}
     />
   );
+  
 
   const handlePayment = async (paymentMethod) => {
     try {
       const orderData = {
+        orderShop: firstShop.title,
         orderList: selectedServices.map((service) => ({
           id: service.id,
           serviceTitle: service.serviceTitle,
@@ -45,6 +47,7 @@ function PaymentPage() {
     } catch (error) {
       console.error("Error placing order: ", error);
     }
+    navigate('/confirmation');
   };
 
   useEffect(() => {
@@ -144,21 +147,22 @@ function PaymentPage() {
               <h1>PAYMENT METHOD</h1>
             </div>
             <div className="PaymentDetails-wrapper-bottom">
-              <button
+              
+              <button 
                 className="paymentMethod-btn"
                 onClick={() => handlePayment("Pay at Merchant")}
               >
                 <div className="paymentMethod-btn-text">Pay at Merchant</div>
                 <img src="/Merchant.png" alt="" className="paymentMethod-img" />
               </button>
-              <button
+              <button 
                 className="paymentMethod-btn"
                 onClick={() => handlePayment("QRIS")}
               >
                 <div className="paymentMethod-btn-text">QRIS</div>
                 <img src="/qr.png" alt="" className="paymentMethod-img" />
               </button>
-              <button
+              <button 
                 className="paymentMethod-btn"
                 onClick={() => handlePayment("Debit/Credit")}
               >
