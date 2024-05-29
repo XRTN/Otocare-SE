@@ -68,3 +68,8 @@
     align-items: center;
 }
 
+@media (max-width:600px){
+    .title-left>h1{
+        font-size: 20px;
+    }
+}

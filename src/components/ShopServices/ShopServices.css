@@ -12,11 +12,13 @@
 .services-heading {
   color: #121F45;
   font-family: "Days One", sans-serif;
+  display: flex;
   font-size: 64px;
   text-align: left; 
   margin-top: 5%; 
-  padding-right: 67%; 
+  margin-left: 1%;
 }
+
 
 .finishOrder-container {
   width: 100%;
@@ -56,4 +58,31 @@
 .serv-card.selected {
   background-color: #e7e7e7;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.finishOrder-btn{
+  font-family: Days One;
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .shop-services-container {
+    justify-content: center;
+  }
+  .services-heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-services-container {
+    padding: 0 10px; 
+  }
 }

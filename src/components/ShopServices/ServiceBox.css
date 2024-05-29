@@ -56,3 +56,31 @@
   color: #808080;
   font-size: 16px;
 }
+
+
+@media (max-width: 1024px) {
+  .serv-card {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .serv-card {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .serv-card-bottom > h1 {
+    font-size: 20px;
+  }
+
+  .serv-card-bottom > h2 {
+    font-size: 16px;
+  }
+
+  .serv-card-bottom > p {
+    font-size: 14px;
+  }
+}

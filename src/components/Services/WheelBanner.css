@@ -69,3 +69,36 @@ body, html {
     text-align: center;
     margin-top: 40px;
 }
+
+@media  screen and (max-width:1265px) {
+    .wheelb-description-container {
+        width: 40%; 
+        padding: 5% 5%; 
+    }
+
+    .wheelb-description-container > h1 {
+        font-size: 1.5rem; 
+    }
+
+    .wheelb-description-container > p {
+        font-size: 0.9rem; 
+        margin-top: 15px; 
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .wheelb-description-container {
+        width: 50%; 
+        padding: 5% 5%; 
+    }
+
+    .wheelb-description-container > h1 {
+        font-size: 1.2rem; 
+    }
+
+    .wheelb-description-container > p {
+        font-size: 0.9rem; 
+        margin-top: 15px; 
+    }
+}
+

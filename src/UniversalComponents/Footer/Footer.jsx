@@ -16,7 +16,7 @@ function Footer() {
         <div className="footer-mid">
             <h1>OFFICE</h1>
             <p className='p1'>Jl. Kyai Maja No.1, RT.002/RW.001, Panunggangan, Kec. Pinang, Kota Tangerang, Banten 15143</p>
-            <h2>CONTACT US</h2>
+            <h2>EMAIL US</h2>
             <p className='p2'>otocare.support@gmail.com</p>
         </div>
         <div className="footer-right">

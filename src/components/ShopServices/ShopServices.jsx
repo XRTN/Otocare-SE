@@ -138,7 +138,7 @@ function ShopServices() {
       </div>
       <div className="finishOrder-container">
         <Link to={paymentPath} className="finishOrder-btn" >
-          order now
+          ORDER
         </Link>
       </div>
       <Footer />

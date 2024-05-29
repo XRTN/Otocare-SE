@@ -69,3 +69,35 @@ body, html {
     letter-spacing: -2%;
     margin-top: 30px;
 }
+
+@media screen and (max-width: 768px) {
+    .elecb-container {
+        height: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .elecb-wrapper {
+        flex-direction: column;
+    }
+
+    .elecb-description-container,
+    .elecb-img-container {
+        width: 100%;
+    }
+
+    .elecb-description-container {
+        padding: 0 5%;
+    }
+
+    .elecb-description-container > h1 {
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+
+    .elecb-description-container > p {
+        font-size: 1rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
