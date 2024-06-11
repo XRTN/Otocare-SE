@@ -1,39 +1,96 @@
 import React from 'react'
 import './ProfilePage.css';
 
+import Navbar from '../../UniversalComponents/Navbar/Navbar'
+import Footer from '../../UniversalComponents/Footer/Footer';
+import { Link } from 'react-router-dom';
+
 function Profile() {
+  const closeMobileMenu = () => setClick(false)
+  const userData = {
+    username: "Fredi Jacob",
+    name: "Fredi Nigelle Yakobson Simangunsong ",
+    email: "Freditampanssz@gmail.com",
+    phoneNumber: "0845369784521",
+    address: "Jl. Teluk Betung no 28, Blok CC 1",
+    province: "Jambi",
+  }
+
   return (
     <>
-    <div className="profile-arrow">
-      <img src="./arrow.png" alt="arrow" />
-      <div className="arrowlogo"></div>
-      <div className="profiletag">
-        <h1>PROFILE</h1>
+      <Navbar />
+      {/* <ProfileTag/> */}
+      <div className="profiletag-container">
+        <div className="profiletag-wrapper">
+          {/* <Link to='/' className = 'back' onClick={closeMobileMenu}> */}
+          {/* <img src="/arrow.png" alt="arrow" /> */}
+          {/* </Link> */}
+          <div className="profiletag">
+            <h1>PROFILE</h1>
+          </div>
         </div>
       </div>
-      <div className="container">
-        <div className="profilepicturecontainer">
-          
-        </div>
-        <div className="userprofile-box">
 
-          <h2>User Profile</h2>
-          <div className="form-group">
-        <label htmlFor='username'>User Name</label>
-          <input type="Username" id='username' name='username' required=""/>
-        <label htmlFor="name">Name</label> 
-          <input type="Name" id='name' name='name' required=""/>
-        <label htmlFor="Email">E-mail</label>
-          <input type="Email" id='email' name='Email' required=""/>
-        <label htmlFor="PhoneNumber">Phone Number</label>
-          <input type="Phonenumber" id='phonenumber' name='phonenumber' required="" />
-        <label htmlFor="address">Address</label>
-          <input type="Address" id='address' name='address' required="" />
-        <label htmlFor="province">Province</label>
-          <input type="Province" id='province' name='province' required=""/>
-        </div>
+      {/* <ProfilePic/> */}
+      <div className="profilepic-container">
+        <div className="profilepic-wrapper">
+          <div className="profilepic-top">
+            <img src="profilepic.jpg" alt="profilepic" />
+          </div>
+          <div className="profilepic-bot">
+            <h2>
+              {userData.username}
+            </h2>
+            <h3>
+              {userData.email}
+            </h3>
+            <h3>
+              {userData.phoneNumber}
+            </h3>
+          </div>
         </div>
       </div>
+
+      <div className="UserProfile-container">
+        <div className="UserProfile-wrapper">
+          <h2>User Profile</h2>
+          <div className="user-info">
+            <label>Username</label>
+            <div className="info-box">{userData.username}</div>
+          </div>
+          <div className="user-info">
+            <label>Name</label>
+            <div className="info-box">{userData.name}</div>
+          </div>
+          <div className="user-info">
+            <label>Email</label>
+            <div className="info-box">{userData.email}</div>
+          </div>
+          <div className="user-info">
+            <label>Phone Number</label>
+            <div className="info-box">{userData.phoneNumber}</div>
+          </div>
+          <div className="user-info">
+            <label>Address</label>
+            <div className="info-box">{userData.address}</div>
+          </div>
+          <div className="user-info">
+            <label>Province</label>
+            <div className="info-box">{userData.province}</div>
+          </div>
+          
+          <div className="button-container">
+            <button>
+              Edit Profile
+            </button>
+            <Link to='/login' className='changeaccount' onClick={closeMobileMenu}>
+              Change Account
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
     </>
   )
 }

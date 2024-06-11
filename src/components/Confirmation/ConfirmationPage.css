@@ -14,3 +14,23 @@
     justify-content: center;
     font-size: 3rem;
   }
+
+  @media screen and (max-width: 768px) {
+    .RepairShops,
+    .Orders,
+    .Profile {
+        font-size: 2.5rem;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    .RepairShops,
+    .Orders,
+    .Profile {
+        font-size: 2rem;
+        height: 80vh; /* Adjust height for better fit on smaller screens */
+        padding: 0 5%; /* Add padding for better spacing */
+        text-align: center; /* Center text for better readability */
+    }
+}

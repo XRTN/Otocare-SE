@@ -138,3 +138,70 @@
     width: 25%;
     height: 65%;
 }
+
+@media screen and (max-width: 768px) {
+    .PaymentDetails-wrapper {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        height: auto;
+    }
+
+    .PaymentDetails-wrapper-top {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .standard-btns .btn, .premium-btns .btn, .PayAtMerchant-btns .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .PaymentDetails-wrapper-middle {
+        padding: 0 5%;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    .PaymentDetails-wrapper {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 5%;
+    }
+
+    .PaymentDetails-wrapper-top {
+        height: auto;
+    }
+
+    .PaymentMethod > h1 {
+        font-size: 1.5rem;
+    }
+
+    .ServicePayment > p, .MobileServiceCharge > p, .Subtotal > p, .Merchant > p {
+        font-size: 1rem;
+    }
+
+    .order-btns .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .paymentMethod-btn {
+        font-size: 0.9rem;
+    }
+
+    .paymentMethod-img {
+        width: 6%;
+        height: auto;
+    }
+
+    .debit-container {
+        width: 35%;
+    }
+
+    .debit-img {
+        width: 35%;
+    }
+}
