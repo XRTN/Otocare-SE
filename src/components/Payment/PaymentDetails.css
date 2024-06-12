@@ -162,7 +162,6 @@
     }
 }
 
-/* Mobile devices */
 @media screen and (max-width: 480px) {
     .PaymentDetails-wrapper {
         width: 100%;

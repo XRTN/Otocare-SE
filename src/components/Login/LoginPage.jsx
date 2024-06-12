@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './LoginPage.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase';
+import { AuthContext } from '../../context/AuthContext';
 
-function LoginPage({ setCurrentUser }) {
+function LoginPage() {
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const {dispatch}=useContext(AuthContext)
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,8 +18,7 @@ function LoginPage({ setCurrentUser }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
-        setCurrentUser(user); // Update current user state
+        dispatch({type:"LOGIN",payload:user})
         navigate("/");
       })
       .catch((error) => {

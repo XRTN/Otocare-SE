@@ -10,19 +10,23 @@ import ShopServices from './components/ShopServices/ShopServices';
 import Services from './components/Services/Services';
 import ConfirmationPage from './components/Confirmation/ConfirmationPage';
 import Orders from './components/Orders/Orders';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
+import ScrollToTop from './UniversalComponents/ScrollToTop';
+import { AuthContext } from './context/AuthContext';
+
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null); // Manage current user state
-
+ 
+  const {currentUser}=useContext(AuthContext)
   const RequireAuth = ({ children }) => {
     return currentUser ? children : <Navigate to="/login" />;
   };
-
+  console.log(currentUser);
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
-        <Route path="/login" element={<LoginPage setCurrentUser={setCurrentUser} />} />
+        <Route path="/login" element={<LoginPage/>} />
         <Route path="/register" element={<RegisterPage />} />
         <Route
           path="/"

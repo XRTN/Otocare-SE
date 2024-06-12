@@ -17,7 +17,7 @@
 
 .orderCard-top {
     padding-top: 2%;
-    text-align: center; 
+    text-align: left; 
 }
 
 .orderCard-top > h1 {
@@ -96,6 +96,11 @@
     .orders-title > h1 {
         font-size: 1.5rem;
     }
+    
+.orderCard-top {
+   
+    text-align: center; 
+}
 
     .orderCard-bottom {
         flex-direction: column;
@@ -149,6 +154,11 @@
     .orderCard-container {
         padding: 20px 0;
     }
+
+    
+.orderCard-top {
+    text-align: left; 
+}
 
     .orderCard-bottom-left > p {
         font-size: 1rem;

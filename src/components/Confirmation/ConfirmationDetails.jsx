@@ -30,6 +30,7 @@ function ConfirmationDetails() {
                 <div className='ConfirmationDetails-wrapper-bottom'>
                     <div className='Contact-btns'>
                         <Button
+                        target="_blank"
                             linkTo="https://wa.me/6282168682109?text=Hi%20I'd%20like%20help%20about%20OTOCARE"
                             className="btns"
                             buttonStyle="btn--primary"
