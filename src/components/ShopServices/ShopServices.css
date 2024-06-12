@@ -8,7 +8,6 @@
   margin-right: 7%;
   column-gap: 5%;
 }
-
 .services-heading {
   color: #121F45;
   font-family: "Days One", sans-serif;
@@ -18,6 +17,7 @@
   margin-top: 5%; 
   margin-left: 1%;
 }
+
 
 .button-container {
   display: flex;
@@ -40,7 +40,7 @@
   color: white;
   font-weight: 600;
   font-size: 20px;
-  
+
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s; 
@@ -63,13 +63,9 @@
 .serv-card {
   cursor: pointer;
   border-radius: 8px;
-  transition: background-color 0.1s ease;
-}
-
-.serv-card.selected {
-  background-color: #e7e7e7;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
+
 
 
 
@@ -83,14 +79,12 @@
     font-size: 40px;
   }
 }
-
 @media (max-width: 768px) {
   .shop-services-container {
     flex-direction: column;
     align-items: center;
   }
 }
-
 @media (max-width: 480px) {
   .shop-services-container {
     padding: 0 10px; 

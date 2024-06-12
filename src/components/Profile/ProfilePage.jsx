@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 function Profile() {
   const closeMobileMenu = () => setClick(false)
+  
   const userData = {
     username: "Fredi Jacob",
     name: "Fredi Nigelle Yakobson Simangunsong ",
