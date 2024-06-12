@@ -136,11 +136,20 @@ function ShopServices() {
           ))
         )}
       </div>
-      <div className="finishOrder-container">
-        <Link to={paymentPath} className="finishOrder-btn" >
-          ORDER
-        </Link>
-      </div>
+      <div className="button-container">
+  <div className="button">
+    <Link to={paymentPath} className="finishOrder-btn">
+      ORDER
+    </Link>
+  </div>
+  <div className="button">
+    <Link target={"_blank"} to="https://wa.me/6282168682109?text=Hi%20I'd%20like%20help%20about%20OTOCARE" className="contactMerchant">
+      Contact Merchant
+    </Link>
+  </div>
+</div>
+
+
       <Footer />
     </div>
   );
