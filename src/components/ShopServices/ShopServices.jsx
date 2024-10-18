@@ -6,6 +6,7 @@ import ServiceBox from "./ServiceBox";
 import RepairShopBanner from "../Payment/RepairShopBanner.jsx";
 import { Link, useParams } from "react-router-dom";
 import { db } from "../../firebase.js";
+import { Button } from '../../UniversalComponents/Button/Button';
 import {
   collection,
   getDocs,
@@ -83,6 +84,7 @@ function ShopServices() {
               serviceTitle: service.title,
               servicePrice: service.price,
               priceText: service.subtitle,
+              serviceImg:service.img,
               choice: false,
             });
           }
@@ -129,18 +131,26 @@ function ShopServices() {
                 handleServiceClick(shop.id, service.id, service.choice)
               }
               serviceName={service.serviceTitle}
-              imageUrl="/gambarservices/OilService.jpg"
+              imageUrl={service.serviceImg}
               priceStandard={service.servicePrice}
               isSelected={service.choice}
             />
           ))
         )}
       </div>
+      
       <div className="finishOrder-container">
         <Link to={paymentPath} className="finishOrder-btn" >
           ORDER
         </Link>
+      <Link target={"_blank"} to={"https://wa.me/6282168682109?text=Hi%20I'd%20like%20help%20about%20OTOCARE"} className="finishOrder-btn" >
+          CONTACT
+        </Link>
       </div>
+      <div className='Contact-btns'>
+                    
+      </div>
+
       <Footer />
     </div>
   );

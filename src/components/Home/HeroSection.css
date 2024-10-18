@@ -106,6 +106,10 @@
     width: 30%;
 }
 
+.bestPrices-right, .guarantee-right, .certified-right {
+    width: 70%;
+}
+
 .certified-left > img {
     margin-top: 2%;
     display: flex;

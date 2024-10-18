@@ -14,7 +14,7 @@ function ServiceBox({
       onClick={handleClick}
     >
       <div className="serv-card-top">
-        <img src={imageUrl} className="serv-card-img" alt={serviceName} />
+        <img src={imageUrl} className="serv-card-img"  />
       </div>
       <div className="serv-card-bottom">
         <h1 className="serv-card-title">{serviceName}</h1>
