@@ -83,6 +83,9 @@
 }
 
 @media (max-width: 480px) {
+  .finishOrder-btn{
+    width: 30%;
+  }
   .shop-services-container {
     padding: 0 10px; 
   }

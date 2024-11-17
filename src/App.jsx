@@ -1,38 +1,55 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import HomePage from './components/Home/HomePage';
+import { useContext } from 'react';
+import { AuthContext } from './context/AuthContext';
+import ScrollToTop from './UniversalComponents/ScrollToTop';
+
+// Keep Login and Register with regular imports since they're entry points
 import LoginPage from './components/Login/LoginPage';
 import RegisterPage from './components/Register/RegisterPage';
-import ProfilePage from './components/Profile/ProfilePage';
-import PaymentPage from './components/Payment/PaymentPage';
-import RepairShops from './components/RepairShops/RepairShops';
-import ShopServices from './components/ShopServices/ShopServices';
-import Services from './components/Services/Services';
-import ConfirmationPage from './components/Confirmation/ConfirmationPage';
-import Orders from './components/Orders/Orders';
-import { useContext } from 'react';
-import ScrollToTop from './UniversalComponents/ScrollToTop';
-import { AuthContext } from './context/AuthContext';
-import WorkshopHome from './components/workshop-home/workshop-home';
+
+// Lazy load all protected routes
+const HomePage = lazy(() => import('./components/Home/HomePage'));
+const ProfilePage = lazy(() => import('./components/Profile/ProfilePage'));
+const PaymentPage = lazy(() => import('./components/Payment/PaymentPage'));
+const RepairShops = lazy(() => import('./components/RepairShops/RepairShops'));
+const ShopServices = lazy(() => import('./components/ShopServices/ShopServices'));
+const Services = lazy(() => import('./components/Services/Services'));
+const ConfirmationPage = lazy(() => import('./components/Confirmation/ConfirmationPage'));
+const Orders = lazy(() => import('./components/Orders/Orders'));
+const WorkshopHome = lazy(() => import('./components/workshop-home/workshop-home'));
 
 function App() {
- 
-  const {currentUser}=useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
+  
   const RequireAuth = ({ children }) => {
     return currentUser ? children : <Navigate to="/login" />;
   };
-  console.log(currentUser);
+
+  // Loading component for Suspense fallback
+  const LoadingSpinner = () => (
+    <div className="loading-spinner">
+      Loading...
+    </div>
+  );
+
   return (
     <Router>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
-        <Route path="/login" element={<LoginPage/>} />
+        {/* Non-protected routes without Suspense */}
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+
+        {/* Protected routes with Suspense */}
         <Route
           path="/"
           element={
             <RequireAuth>
-              <HomePage />
+              <Suspense fallback={<LoadingSpinner />}>
+                <HomePage />
+              </Suspense>
             </RequireAuth>
           }
         />
@@ -40,7 +57,9 @@ function App() {
           path="/profile"
           element={
             <RequireAuth>
-              <ProfilePage />
+              <Suspense fallback={<LoadingSpinner />}>
+                <ProfilePage />
+              </Suspense>
             </RequireAuth>
           }
         />
@@ -48,7 +67,9 @@ function App() {
           path="/payment/:searchID"
           element={
             <RequireAuth>
-              <PaymentPage />
+              <Suspense fallback={<LoadingSpinner />}>
+                <PaymentPage />
+              </Suspense>
             </RequireAuth>
           }
         />
@@ -56,7 +77,9 @@ function App() {
           path="/repairShops"
           element={
             <RequireAuth>
-              <RepairShops />
+              <Suspense fallback={<LoadingSpinner />}>
+                <RepairShops />
+              </Suspense>
             </RequireAuth>
           }
         />
@@ -64,7 +87,9 @@ function App() {
           path="/shopServices/:searchID"
           element={
             <RequireAuth>
-              <ShopServices />
+              <Suspense fallback={<LoadingSpinner />}>
+                <ShopServices />
+              </Suspense>
             </RequireAuth>
           }
         />
@@ -72,7 +97,9 @@ function App() {
           path="/services"
           element={
             <RequireAuth>
-              <Services />
+              <Suspense fallback={<LoadingSpinner />}>
+                <Services />
+              </Suspense>
             </RequireAuth>
           }
         />
@@ -80,7 +107,9 @@ function App() {
           path="/confirmation"
           element={
             <RequireAuth>
-              <ConfirmationPage />
+              <Suspense fallback={<LoadingSpinner />}>
+                <ConfirmationPage />
+              </Suspense>
             </RequireAuth>
           }
         />
@@ -88,7 +117,9 @@ function App() {
           path="/orders"
           element={
             <RequireAuth>
-              <Orders />
+              <Suspense fallback={<LoadingSpinner />}>
+                <Orders />
+              </Suspense>
             </RequireAuth>
           }
         />
@@ -96,11 +127,12 @@ function App() {
           path="/workshopHome"
           element={
             <RequireAuth>
-             <WorkshopHome/>
+              <Suspense fallback={<LoadingSpinner />}>
+                <WorkshopHome />
+              </Suspense>
             </RequireAuth>
           }
         />
-
       </Routes>
     </Router>
   );
