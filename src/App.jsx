@@ -13,7 +13,7 @@ import Orders from './components/Orders/Orders';
 import { useContext } from 'react';
 import ScrollToTop from './UniversalComponents/ScrollToTop';
 import { AuthContext } from './context/AuthContext';
-
+import WorkshopHome from './components/workshop-home/workshop-home';
 
 function App() {
  
@@ -92,6 +92,15 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route
+          path="/workshopHome"
+          element={
+            <RequireAuth>
+             <WorkshopHome/>
+            </RequireAuth>
+          }
+        />
+
       </Routes>
     </Router>
   );

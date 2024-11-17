@@ -43,12 +43,15 @@
     list-style: none;
     text-align: center;
     width: 60vw;
-    justify-content: end;
+    justify-content: center;
     margin-right: 2.5rem;
+    align-items: center;
+    margin-bottom: 0;
   }
   
   .nav-item {
-    height: 90px;
+    align-items: center;
+    height: 100%;
   }
   
   .nav-links {
