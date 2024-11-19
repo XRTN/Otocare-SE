@@ -6,6 +6,7 @@ import Footer from '../../UniversalComponents/Footer/Footer';
 import { Link } from 'react-router-dom';
 
 function Profile() {
+  // const [click, setClick] = useState(false);
   const closeMobileMenu = () => setClick(false)
   
   const userData = {
