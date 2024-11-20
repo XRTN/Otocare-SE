@@ -19,6 +19,7 @@ const Services = lazy(() => import('./components/Services/Services'));
 const ConfirmationPage = lazy(() => import('./components/Confirmation/ConfirmationPage'));
 const Orders = lazy(() => import('./components/Orders/Orders'));
 const WorkshopHome = lazy(() => import('./components/workshop-home/workshop-home'));
+const WorkshopFormPage = lazy(() => import('./components/workshop-form/WorkshopFormPage'));
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -129,6 +130,16 @@ function App() {
             <RequireAuth>
               <Suspense fallback={<LoadingSpinner />}>
                 <WorkshopHome />
+              </Suspense>
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/workshop-form"
+          element={
+            <RequireAuth>
+              <Suspense fallback={<LoadingSpinner />}>
+                <WorkshopFormPage />
               </Suspense>
             </RequireAuth>
           }

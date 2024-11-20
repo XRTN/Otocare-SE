@@ -9,11 +9,20 @@ import { db } from "../../firebase.js";
 import { collection, getDocs, where, query, addDoc } from "firebase/firestore";
 import "./PaymentDetails.css";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase.js";
 
 function PaymentPage() {
   const { searchID } = useParams();
   const [searchResult, setSearchResult] = useState([]);
   const navigate = useNavigate();
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const ColoredLine = ({ color }) => (
     <hr
@@ -28,6 +37,12 @@ function PaymentPage() {
   
 
   const handlePayment = async (paymentMethod) => {
+    if (!currentUser) {
+      alert("Please login to continue with payment");
+      navigate('/login');
+      return;
+    }
+
     try {
       const orderData = {
         orderShop: firstShop.title,
@@ -39,10 +54,10 @@ function PaymentPage() {
         orderPrice: subtotal + 10000,
         orderPaymentMethod: paymentMethod,
         orderDate: new Date(),
+        userUID: currentUser.uid 
       };
 
       const docRef = await addDoc(collection(db, "Orders"), orderData);
-  
       console.log("Order placed successfully with ID: ", docRef.id);
     } catch (error) {
       console.error("Error placing order: ", error);
