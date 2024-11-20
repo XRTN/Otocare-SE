@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./WorkshopFormPage.css";
 import Navbar from "../../UniversalComponents/Navbar/Navbar";
 import Footer from "../../UniversalComponents/Footer/Footer";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, getDoc } from "firebase/firestore";
 import { db, auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -15,11 +15,33 @@ function WorkshopFormPage() {
     orderPaymentMethod: "Pay at Merchant"
   });
 
-  // Check if user is logged in
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
-      if (!user) {
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        try {
+          // Check if user is a workshop
+          const userDoc = await getDoc(doc(db, "Users", user.uid));
+          const userData = userDoc.data();
+          
+          if (userData?.Role !== "Workshop") {
+            alert("Access denied. Only workshop accounts can access this page.");
+            navigate("/");
+            return;
+          }
+          
+          setCurrentUser(user);
+          // Pre-fill workshop name if available
+          if (userData?.UserName) {
+            setFormData(prev => ({
+              ...prev,
+              orderShop: userData.UserName
+            }));
+          }
+        } catch (error) {
+          console.error("Error checking user role:", error);
+          navigate("/");
+        }
+      } else {
         navigate("/login");
       }
     });
@@ -73,6 +95,7 @@ function WorkshopFormPage() {
         userUID: currentUser.uid  // Using current workshop's UID
       };
 
+      console.log("Submitting order:", orderData); // Debug log
       await addDoc(collection(db, "Orders"), orderData);
       alert("Order created successfully!");
       navigate("/orders");
