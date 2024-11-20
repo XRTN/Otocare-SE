@@ -20,7 +20,8 @@ function OrderCardContainer({ docId }) {
             orderShop: data.orderShop,
             orderPrice: data.orderPrice,
             orderPaymentMethod: data.orderPaymentMethod,
-            orderDate:data.orderDate.toDate().toLocaleString(),
+            orderDate: data.orderDate.toDate().toLocaleString(),
+            userUID: data.userUID  // Add this line to include userUID
           });
         } else {
           setError("No such document!");
@@ -53,6 +54,7 @@ function OrderCardContainer({ docId }) {
       orderPrice={orderData.orderPrice}
       orderPaymentMethod={orderData.orderPaymentMethod}
       orderDate={orderData.orderDate}
+      userUID={orderData.userUID}  // Add this line to pass userUID to OrderCard
     />
   );
 }

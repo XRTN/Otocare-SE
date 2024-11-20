@@ -5,11 +5,10 @@ import "./PaymentPage.css";
 import RepairShopBanner from "./RepairShopBanner";
 import PaymentHeader from "./PaymentHeader";
 import { Link, useParams } from "react-router-dom";
-import { db } from "../../firebase.js";
+import { db, auth } from "../../firebase.js";
 import { collection, getDocs, where, query, addDoc } from "firebase/firestore";
 import "./PaymentDetails.css";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase.js";
 
 function PaymentPage() {
   const { searchID } = useParams();
@@ -34,7 +33,6 @@ function PaymentPage() {
       }}
     />
   );
-  
 
   const handlePayment = async (paymentMethod) => {
     if (!currentUser) {
@@ -42,6 +40,9 @@ function PaymentPage() {
       navigate('/login');
       return;
     }
+
+    console.log("Current User in Payment:", currentUser); // Debug log
+    console.log("Current User UID:", currentUser.uid);    // Debug log
 
     try {
       const orderData = {
@@ -54,16 +55,18 @@ function PaymentPage() {
         orderPrice: subtotal + 10000,
         orderPaymentMethod: paymentMethod,
         orderDate: new Date(),
-        userUID: currentUser.uid 
+        userUID: currentUser.uid
       };
+
+      console.log("Order Data being sent:", orderData); // Debug log
 
       const docRef = await addDoc(collection(db, "Orders"), orderData);
       console.log("Order placed successfully with ID: ", docRef.id);
+      navigate('/confirmation');
     } catch (error) {
       console.error("Error placing order: ", error);
     }
-    navigate('/confirmation');
-  };
+};
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -162,7 +165,6 @@ function PaymentPage() {
               <h1>PAYMENT METHOD</h1>
             </div>
             <div className="PaymentDetails-wrapper-bottom">
-              
               <button 
                 className="paymentMethod-btn"
                 onClick={() => handlePayment("Pay at Merchant")}
