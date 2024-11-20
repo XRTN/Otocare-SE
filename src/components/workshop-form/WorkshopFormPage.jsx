@@ -98,7 +98,7 @@ function WorkshopFormPage() {
       console.log("Submitting order:", orderData); // Debug log
       await addDoc(collection(db, "Orders"), orderData);
       alert("Order created successfully!");
-      navigate("/orders");
+      navigate("/workshopOrder");
     } catch (error) {
       console.error("Error creating order:", error);
       alert("Error creating order: " + error.message);

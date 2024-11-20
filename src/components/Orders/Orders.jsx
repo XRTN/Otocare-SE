@@ -12,6 +12,7 @@ function Orders() {
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user) => {
+            
             setCurrentUser(user);
             if (user) {
                 fetchOrders(user.uid);

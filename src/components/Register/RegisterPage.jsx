@@ -3,7 +3,7 @@ import './RegisterPage.css';
 import { Link } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from '../../firebase';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc ,setDoc} from "firebase/firestore";
 import { useNavigate } from 'react-router-dom';
 
 function RegisterPage() {
@@ -16,21 +16,22 @@ function RegisterPage() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    
+  
     if (validateName(name) && validateEmail(email) && validatePassword(password)) {
       try {
         // Create user authentication
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-
-        // Create user document in Users collection
+  
+        // Create user document in Users collection with UserUID as the document ID
         const userData = {
           Role: "Customer",
           UserName: name,
-          UserUID: user.uid
+          UserUID: user.uid, // Optional but can be stored redundantly for query convenience
         };
-
-        await addDoc(collection(db, "Users"), userData);
+  
+        await setDoc(doc(db, "Users", user.uid), userData);
+  
         navigate("/login");
       } catch (error) {
         console.error("Error during registration: ", error);
